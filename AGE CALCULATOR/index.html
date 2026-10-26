@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Calculate your exact age in years, months and days."
+    />
+    <title>Age Calculator</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="age.css" />
+  </head>
+  <body>
+    <!-- =====================================
+       MAIN CONTAINER
+       ===================================== -->
+    <main class="container">
+      <section class="calculator-card">
+        <!-- =================================
+           HEADER
+           ================================= -->
+        <div class="header">
+          <span class="eyebrow"> Age Calculator </span>
+          <h1>How old are you?</h1>
+          <p>Enter your date of birth to calculate your exact age.</p>
+        </div>
+        <!-- =================================
+           FORM
+           ================================= -->
+        <form id="age-form" novalidate>
+          <div class="form-group">
+            <label for="birthdate"> Date of birth </label>
+            <!-- =================================
+               CUSTOM DATEPICKER
+               ================================= -->
+            <div class="datepicker">
+              <button
+                type="button"
+                class="date-input"
+                id="date-input"
+                aria-haspopup="dialog"
+                aria-expanded="false"
+              >
+                <span id="selected-date"> Select your birthdate </span>
+                <span class="calendar-icon" aria-hidden="true"> 📅 </span>
+              </button>
+              <!-- =================================
+                 DATEPICKER CALENDAR
+                 ================================= -->
+              <div
+                class="calendar"
+                id="calendar"
+                role="dialog"
+                aria-label="Date picker"
+                hidden
+              >
+                <!-- Calendar Header -->
+                <div class="calendar-header">
+                  <button
+                    type="button"
+                    class="calendar-nav"
+                    id="previous-month"
+                    aria-label="Previous month"
+                  >
+                    ‹
+                  </button>
+                  <div class="month-year" id="month-year"></div>
+                  <button
+                    type="button"
+                    class="calendar-nav"
+                    id="next-month"
+                    aria-label="Next month"
+                  >
+                    ›
+                  </button>
+                </div>
+                <!-- Weekdays -->
+                <div class="weekdays" aria-hidden="true">
+                  <span>Sun</span>
+                  <span>Mon</span>
+                  <span>Tue</span>
+                  <span>Wed</span>
+                  <span>Thu</span>
+                  <span>Fri</span>
+                  <span>Sat</span>
+                </div>
+                <!-- Calendar Days -->
+                <div class="calendar-days" id="calendar-days"></div>
+              </div>
+            </div>
+            <!-- Validation message -->
+            <p class="error-message" id="error-message" aria-live="polite"></p>
+          </div>
+          <!-- =================================
+             CALCULATE BUTTON
+             ================================= -->
+          <button type="submit" class="calculate-button">Calculate Age</button>
+        </form>
+        <!-- =====================================
+           RESULT
+           ===================================== -->
+        <section class="result" id="result" aria-live="polite" hidden>
+          <p class="result-label">Your exact age is</p>
+          <div class="age-results">
+            <div class="age-box">
+              <strong id="years"> 0 </strong>
+              <span> Years </span>
+            </div>
+            <div class="age-box">
+              <strong id="months"> 0 </strong>
+              <span> Months </span>
+            </div>
+            <div class="age-box">
+              <strong id="days"> 0 </strong>
+              <span> Days </span>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <!-- =====================================
+       LUXON
+       ===================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
+    <!-- JavaScript -->
+    <script src="age.js"></script>
+  </body>
+</html>

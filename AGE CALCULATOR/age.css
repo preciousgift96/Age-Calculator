@@ -1,0 +1,340 @@
+/* =====================================
+   RESET
+   ===================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* =====================================
+   BODY
+   ===================================== */
+body {
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+  background: #f4f4f5;
+  color: #18181b;
+  min-height: 100vh;
+}
+/* =====================================
+   MAIN CONTAINER
+   ===================================== */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+}
+/* =====================================
+   CALCULATOR CARD
+   ===================================== */
+.calculator-card {
+  width: 100%;
+  max-width: 650px;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow:
+    0 15px 40px
+    rgba(0, 0, 0, 0.08);
+}
+/* =====================================
+   HEADER
+   ===================================== */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #f4f4f5;
+  color: #52525b;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.header h1 {
+  margin-bottom: 12px;
+  font-size: 34px;
+  line-height: 1.2;
+}
+.header p {
+  color: #71717a;
+  font-size: 15px;
+  line-height: 1.6;
+}
+/* =====================================
+   FORM
+   ===================================== */
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+/* =====================================
+   DATEPICKER
+   ===================================== */
+.datepicker {
+  position: relative;
+  width: 100%;
+}
+/* Date input button */
+.date-input {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 0 16px;
+  border: 2px solid #d4d4d8;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #71717a;
+  font-family: inherit;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.date-input:hover {
+  border-color: #a1a1aa;
+}
+.date-input:focus-visible {
+  outline: none;
+  border-color: #52525b;
+  box-shadow:
+    0 0 0 3px
+    rgba(82, 82, 91, 0.12);
+}
+.date-input.selected {
+  color: #18181b;
+}
+.calendar-icon {
+  font-size: 18px;
+}
+/* =====================================
+   CALENDAR
+   ===================================== */
+.calendar {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  min-width: 300px;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.12);
+}
+/* =====================================
+   CALENDAR HEADER
+   ===================================== */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.month-year {
+  font-size: 16px;
+  font-weight: 700;
+}
+.calendar-nav {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  background: #f4f4f5;
+  color: #18181b;
+  font-size: 22px;
+  cursor: pointer;
+}
+.calendar-nav:hover {
+  background: #e4e4e7;
+}
+/* =====================================
+   WEEKDAYS
+   ===================================== */
+.weekdays,
+.calendar-days {
+  display: grid;
+  grid-template-columns:
+    repeat(7, 1fr);
+  gap: 5px;
+}
+.weekdays {
+  margin-bottom: 8px;
+  text-align: center;
+  color: #71717a;
+  font-size: 11px;
+  font-weight: 700;
+}
+/* =====================================
+   CALENDAR DAY
+   ===================================== */
+.calendar-day {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #18181b;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.calendar-day:hover {
+  background: #f4f4f5;
+}
+/* Empty calendar spaces */
+.calendar-day.empty {
+  cursor: default;
+  pointer-events: none;
+}
+/* Today's date */
+.calendar-day.today {
+  font-weight: 700;
+  box-shadow:
+    inset 0 0 0 1px #a1a1aa;
+}
+/* Selected date */
+.calendar-day.selected {
+  background: #18181b;
+  color: #ffffff;
+}
+/* Future dates */
+.calendar-day.disabled {
+  color: #d4d4d8;
+  cursor: not-allowed;
+}
+/* =====================================
+   ERROR
+   ===================================== */
+.error-message {
+  min-height: 20px;
+  margin-top: 7px;
+  color: #dc2626;
+  font-size: 13px;
+}
+/* =====================================
+   CALCULATE BUTTON
+   ===================================== */
+.calculate-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #18181b;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+.calculate-button:hover {
+  background: #27272a;
+  transform: translateY(-1px);
+}
+.calculate-button:active {
+  transform: translateY(0);
+}
+.calculate-button:focus-visible {
+  outline: 3px solid #a1a1aa;
+  outline-offset: 3px;
+}
+/* =====================================
+   RESULT
+   ===================================== */
+.result {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #e4e4e7;
+  text-align: center;
+}
+.result-label {
+  margin-bottom: 18px;
+  color: #71717a;
+  font-size: 14px;
+}
+/* =====================================
+   AGE RESULTS
+   ===================================== */
+.age-results {
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+  gap: 12px;
+}
+.age-box {
+  padding: 20px 10px;
+  border-radius: 12px;
+  background: #f4f4f5;
+}
+.age-box strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 32px;
+}
+.age-box span {
+  color: #71717a;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+/* =====================================
+   MOBILE
+   ===================================== */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+  .calculator-card {
+    padding: 25px 20px;
+    border-radius: 14px;
+  }
+  .header h1 {
+    font-size: 28px;
+  }
+  .calendar {
+    min-width: 0;
+    padding: 14px;
+  }
+  .calendar-day {
+    font-size: 12px;
+  }
+  .age-box {
+    padding: 16px 8px;
+  }
+  .age-box strong {
+    font-size: 26px;
+  }
+}
